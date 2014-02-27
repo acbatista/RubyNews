@@ -1,0 +1,14 @@
+- if notice
+  .alert.alert-info.alert-dismissable
+    button type="button" class="close" data-dismiss="alert" aria-hidden="true" &times;
+    = notice = "Artigo atualizado com sucesso"
+
+h1
+  = @article.title
+  .pull-right
+    = link_to 'Edit', edit_article_path(@article), class: 'btn btn-default'
+
+hr
+strong = @article.category.name
+p = @article.published_at
+= simple_format @article.body

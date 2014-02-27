@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    title RubyNews
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = csrf_meta_tags
+
+    /[if lt IE 9]
+      = javascript_include_tag "html5shiv", "data-turbolinks-track" => true
+      = javascript_include_tag "respond.min", "data-turbolinks-track" => true
+  body
+
+    .navbar.navbar-inverse.navbar-fixed-top
+     .container
+       .navbar-header
+         a class="navbar-brand" href="/articles" RubyNews
+       .navbar-collapse
+         ul.nav.navbar-nav
+           li.active
+             a href="/articles" Artigos
+           li
+             a href="/categories" Categorias
+
+    .container
+      = yield
+    = javascript_include_tag "application", "data-turbolinks-track" => true
