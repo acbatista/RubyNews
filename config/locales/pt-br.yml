@@ -35,6 +35,7 @@ pt-BR:
       long: ! '%d de %B de %Y'
       complete: ! '%A %d de %B de %Y'
       short: ! '%d de %B'
+      today: ! '%A, %d de %B'
     month_names:
     -
     - Janeiro

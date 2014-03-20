@@ -1,13 +1,9 @@
 class CategoriesController < ApplicationController
-  before_action :set_category, only: [:show, :edit, :update, :destroy]
+  before_action :set_category, only: [:edit, :update, :destroy]
 
   # GET /categories
   def index
     @categories = Category.all
-  end
-
-  # GET /categories/1
-  def show
   end
 
   # GET /categories/new
@@ -17,6 +13,7 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1/edit
   def edit
+
   end
 
   # POST /categories
@@ -24,7 +21,7 @@ class CategoriesController < ApplicationController
     @category = Category.new(category_params)
 
     if @category.save
-      redirect_to @category, notice: 'Category was successfully created.'
+      redirect_to categories_url
     else
       render action: 'new'
     end
@@ -33,7 +30,7 @@ class CategoriesController < ApplicationController
   # PATCH/PUT /categories/1
   def update
     if @category.update(category_params)
-      redirect_to @category, notice: 'Category was successfully updated.'
+      redirect_to categories_url
     else
       render action: 'edit'
     end

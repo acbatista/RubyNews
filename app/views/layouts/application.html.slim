@@ -14,14 +14,15 @@ html
     .navbar.navbar-inverse.navbar-fixed-top
      .container
        .navbar-header
-         a class="navbar-brand" href="/articles" RubyNews
+          = link_to 'RubyNews', root_path, class:'navbar-brand'
        .navbar-collapse
-         ul.nav.navbar-nav
-           li.active
-             a href="/articles" Artigos
-           li
-             a href="/categories" Categorias
+          ul.nav.navbar-nav
+            li class="#{nav_status('articles')}" = link_to 'Artigos', articles_path
+            li class="#{nav_status('categories')}" = link_to 'Categorias', categories_path
+
 
     .container
+      p.pull-right = today
+      p = params
       = yield
     = javascript_include_tag "application", "data-turbolinks-track" => true

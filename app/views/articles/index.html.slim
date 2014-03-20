@@ -1,5 +1,3 @@
-- @articles = Article.order(published_at: :desc).order(:title)
-
 h1 Artigos
 
 table.table.table-striped
@@ -20,7 +18,7 @@ table.table.table-striped
           .btn-group.pull-right
             = link_to 'Ver', article, class: 'btn btn-default btn-sm'
             = link_to 'Editar', edit_article_path(article), class: 'btn btn-default btn-sm'
-            = link_to 'Excluir', article, :confirm => 'Tem certeza?', :method => :delete, class: 'btn btn-default btn-sm'
+            = link_to 'Excluir', article, method: :delete, data: {confirm: "Tem certeza"}, class: 'btn btn-default btn-sm'
 
 br
 
