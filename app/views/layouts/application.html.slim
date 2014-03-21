@@ -10,19 +10,18 @@ html
       = javascript_include_tag "html5shiv", "data-turbolinks-track" => true
       = javascript_include_tag "respond.min", "data-turbolinks-track" => true
   body
-
-    .navbar.navbar-inverse.navbar-fixed-top
-     .container
-       .navbar-header
-          = link_to 'RubyNews', root_path, class:'navbar-brand'
-       .navbar-collapse
-          ul.nav.navbar-nav
-            li class="#{nav_status('articles')}" = link_to 'Artigos', articles_path
-            li class="#{nav_status('categories')}" = link_to 'Categorias', categories_path
-
+    -if user_signed_in?
+      .navbar.navbar-inverse.navbar-fixed-top
+       .container
+         .navbar-header
+            = link_to 'RubyNews', root_path, class:'navbar-brand'
+         .navbar-collapse
+            ul.nav.navbar-nav
+              li class="#{nav_status('articles')}" = link_to 'Artigos', articles_path
+              li class="#{nav_status('categories')}" = link_to 'Categorias', categories_path
+            ul.nav.navbar-nav.pull-right
+              li = link_to 'Sair', destroy_user_session_path, method: :delete
 
     .container
-      p.pull-right = today
-      p = params
       = yield
     = javascript_include_tag "application", "data-turbolinks-track" => true

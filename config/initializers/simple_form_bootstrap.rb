@@ -41,5 +41,12 @@ SimpleForm.setup do |config|
   # Check the Bootstrap docs (http://twitter.github.com/bootstrap)
   # to learn about the different styles for forms and inputs,
   # buttons and other elements.
+  config.wrappers :checkbox, :tag => 'div', :input_class => 'wwwwww' , :class => 'checkbox lorem ipsum', :error_class => 'has-error' do |b|
+    b.use :html5
+    b.use :placeholder
+    b.use :label_input
+  end
+  config.wrapper_mappings = { :boolean => :checkbox }
+
   config.default_wrapper = :bootstrap
 end
