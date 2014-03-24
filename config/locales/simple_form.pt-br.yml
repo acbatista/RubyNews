@@ -14,6 +14,7 @@ pt-BR:
     labels:
       defaults:
         password: Senha
+        password_confirmation: Confirma senha
         name: Nome
       article:
         title: Título

@@ -1,8 +1,9 @@
 RubyNews::Application.routes.draw do
   devise_for :users
-  resources :categories
+  resources :categories, except: :show
 
   resources :articles
+  resources :users, except: :show
 
   root 'articles#index'
 
