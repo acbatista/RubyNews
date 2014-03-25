@@ -41,5 +41,6 @@ group :development do
   gem 'pry-rails', '~> 0.3.2'
 end
 
+gem 'uploadbox', '0.1.4'
 
 
