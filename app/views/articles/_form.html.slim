@@ -2,6 +2,7 @@
   = f.error_notification
 
   .form-inputs
+  	= f.uploads_one :image, preview: :regular
     = f.input :title
     = f.association :category, prompt: "Selecione"
     = f.input :body
