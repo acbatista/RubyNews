@@ -1,6 +1,8 @@
-class ArticlesController < ApplicationController
+class Admin::ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+
+  layout 'admin'
 
   # GET /articles
   def index
@@ -25,7 +27,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
 
     if @article.save
-      redirect_to @article, notice: 'Artigo criado com sucesso.'
+      redirect_to [:admin, @article], notice: 'Artigo criado com sucesso.'
     else
       render action: 'new'
     end
@@ -34,7 +36,7 @@ class ArticlesController < ApplicationController
   # PATCH/PUT /articles/1
   def update
     if @article.update(article_params)
-      redirect_to @article, notice: 'Artigo atualizado.'
+      redirect_to [:admin, @article], notice: 'Artigo atualizado.'
     else
       render action: 'edit'
     end
@@ -43,7 +45,7 @@ class ArticlesController < ApplicationController
   # DELETE /articles/1
   def destroy
     @article.destroy
-    redirect_to articles_url, notice: 'Artigo excluído com sucesso.'
+    redirect_to admin_articles_url, notice: 'Artigo excluído com sucesso.'
   end
 
   private

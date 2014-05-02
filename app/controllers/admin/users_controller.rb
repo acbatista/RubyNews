@@ -1,6 +1,8 @@
-class UsersController < ApplicationController
+class Admin::UsersController < ApplicationController
   before_action :set_user, only: [ :edit, :update, :destroy]
   before_action :authenticate_user!
+
+  layout 'admin'
 
   # GET /users
   def index
@@ -21,7 +23,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to users_url
+      redirect_to admin_users_url
     else
       render action: 'new'
     end
@@ -41,7 +43,7 @@ class UsersController < ApplicationController
         sign_in(@user, bypass: true)
       end
 
-      redirect_to users_url
+      redirect_to admin_users_url
     else
       render action: 'edit'
     end

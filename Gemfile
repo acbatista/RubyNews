@@ -7,7 +7,7 @@ gem 'rails', '4.0.4'
 gem 'mysql2', '~> 0.3.15'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
+gem 'sass-rails', '~> 4.0.3'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -42,5 +42,12 @@ group :development do
 end
 
 gem 'uploadbox', '0.1.4'
+
+#frontend
+# frontend
+gem 'bourbon',         '~> 3.1.8'
+gem 'neat',            '~> 1.3.0'
+gem 'high_voltage',    '~> 2.1.0'
+gem 'normalize-rails', '~> 3.0'
 
 

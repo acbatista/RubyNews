@@ -1,12 +1,15 @@
 RubyNews::Application.routes.draw do
   mount Uploadbox::Engine => '/uploadbox', as: :uploadbox
   devise_for :users
-  resources :categories, except: :show
 
-  resources :articles
-  resources :users, except: :show
+  namespace :admin do
+    resources :categories, except: :show
+    resources :articles
+    resources :users, except: :show
+    root 'articles#index'
+  end
 
-  root 'articles#index'
+  root 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
