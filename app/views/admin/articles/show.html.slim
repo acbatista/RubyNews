@@ -3,6 +3,7 @@ h1
   .pull-right
     = link_to 'Edit', edit_admin_article_path(@article), class: 'btn btn-default'
 
+p = @article.summary
 hr
 strong = @article.category.name
 .pull-right Cerca de <b>#{time_to_read @article.body}</b> de leitura

@@ -1,0 +1,19 @@
+- @page_class= "#{@category.name.parameterize} type-section"
+- @title= @category.name
+
+section#featured-article
+  article.noticias
+    = image_tag 'temp/featured-section.jpg', onload: "this.parentNode.style.backgroundImage = 'url('+this.src+')'"
+    .article-inner
+      = link_to '#' do
+        .category = @category.name
+        h1 Longboard é a nova onda entre os jovens de Brasília
+
+section.latest-articles
+  .latest-articles-inner
+    h1 Últimas notícias
+
+    = render @articles
+
+
+= render 'shared/send_news'
