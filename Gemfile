@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.2'
+gem 'rails', '4.1.4'
 
 # Use mysql as the database for Active Record
 gem 'mysql2', '~> 0.3.15'
@@ -25,7 +25,7 @@ gem 'jquery-rails', '~> 3.1.0'
 gem 'turbolinks', '~> 2.2.1'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-#gem 'jbuilder', '~> 1.2'
+#gem 'jbuilder', '~> 2.0'
 
 gem 'pry'
 gem 'pry-meta', '~> 0.0.6'
